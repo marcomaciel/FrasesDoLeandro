@@ -1,13 +1,37 @@
 package br.com.mmaciel.frasesdoleandro.model;
 
+import java.io.Serializable;
 import java.util.Date;
+
+import javax.jdo.annotations.IdGeneratorStrategy;
+import javax.jdo.annotations.IdentityType;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
 
 /**
 *
 * @author Marco Antonio Maciel
 * 
 */
-public class Frase {
+@PersistenceCapable(identityType = IdentityType.APPLICATION)
+public class Frase implements Serializable  {
+	
+	private static final long serialVersionUID = -2612185754087503898L;
+
+	@PrimaryKey
+    @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+    private Long id;
+	
+	@Persistent
+	//com.google.appengine.api.datastore.Text
+	private String texto;
+	
+	@Persistent
+	private Date data;
+	
+	@Persistent
+	private String autor;
 	
 	public Frase() {
 	}
@@ -23,10 +47,6 @@ public class Frase {
 		this.texto = texto;
 	}
 
-	private String texto;
-	private Date data;
-	private String autor;
-	
 	public String getTexto() {
 		return texto;
 	}
@@ -48,8 +68,12 @@ public class Frase {
 
 	@Override
 	public String toString() {
-		return "Frase [texto=" + texto + ", data=" + data + ", autor=" + autor
+		return "Frase [id=" + id + ", texto=" + texto + ", data=" + data + ", autor=" + autor
 				+ "]";
+	}
+
+	public Long getId() {
+		return id;
 	}
 	
 }

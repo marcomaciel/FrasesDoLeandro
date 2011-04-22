@@ -1,6 +1,7 @@
 # Folders# 
-war/WEB-INF/classes/br/**/*
-war/WEB-INF/classes/br
+war/WEB-INF/classes/**/*
+war/WEB-INF/classes
+appengine-generated
 
 # Compiled source #
 ###################

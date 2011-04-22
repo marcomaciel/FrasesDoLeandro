@@ -8,14 +8,7 @@
         <title>Frases do Leandro</title>
     </head>
     <body>
-        <div id="leandro-direita"></div>
-        <div id="leandro-esquerda"></div>
-        <div id="tudo">
-            <div id="topo">
-                <h1>
-                    <a href=".">Frases do <strong>Leandro</strong></a>
-                </h1>
-            </div>
+		<jsp:include page="topo.jsp" />	
             <div id="corpo">
                 <blockquote>
                     <p>${sessionScope["frase"]}</p>
@@ -24,16 +17,9 @@
 
             <div id="div-botao">
                 <p>
-                    <a class="button" href="./frase" title="Outra frase">Outra frase</a>
+                    <a class="button" href="./frase?f=nova" title="Outra frase">Outra frase</a>
                 </p>    
             </div>
-            <div id="rodape">
-                <p>
-                    <img src="http://code.google.com/appengine/images/appengine-silver-120x30.gif" 
-                         alt="Powered by Google App Engine" />
-                </p>
-            </div>
-        </div>
-		<jsp:include page="analytics.html" />
+		<jsp:include page="rodape.jsp" />	
     </body>
 </html>  
