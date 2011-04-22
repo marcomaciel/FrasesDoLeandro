@@ -1,6 +1,6 @@
 # Folders# 
-war/WEB-INF/classes/**/*
-war/WEB-INF/classes
+war/WEB-INF/classes/br/**/*
+war/WEB-INF/classes/br
 
 # Compiled source #
 ###################
