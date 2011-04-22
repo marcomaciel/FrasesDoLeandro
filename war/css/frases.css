@@ -1,0 +1,160 @@
+html {
+    background-color: #fff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font: .625em helvetica, arial, sans-serif;
+}
+
+#tudo {
+    margin: 0 auto;
+    padding: 20px 0 0 0;
+    width: 960px;
+    font-size: 1.2em;
+}
+
+p {
+    margin: 1.4em 0;
+    padding: 0;
+    line-height: 1.4em;
+}
+
+img {
+    border: 0;
+}
+
+hr {
+    display: none;
+}
+
+a,
+a:link,
+a:active,
+a:visited {
+    color: #033649;
+    text-decoration: none;
+    border-bottom: 1px dotted #033649;
+}
+
+a:hover {
+    border-bottom: 1px solid #033649;
+}
+
+blockquote {
+    margin: 25px 80px 25px 80px;
+    padding: 0 0 0 40px;
+    font: 1.6em helvetica, arial, sans-serif;
+    text-align: center;
+    background: transparent url(../images/quote-left.gif) no-repeat 0 0;
+}
+
+blockquote p {
+    margin: 0;
+    padding: 0 25px 0 0;
+    background: transparent url(../images/quote-right.gif) no-repeat right bottom;
+}
+
+/*
+Topo
+*/
+
+#topo {
+    border-bottom: 1px dotted #26ADE4;
+}
+
+#topo h1  {
+    font-size: 5em;
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: -0.05em;
+    margin: .6em;   
+}
+#topo h1 a {
+    border: none;
+}
+#topo h1 a strong {
+    color:  #D1E751;
+
+}
+
+/*
+Corpo
+*/
+
+#corpo {
+    margin: 0 20px;
+    font-size: 1.4em;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+a.tweet-link {
+    border: none;
+}
+
+/*
+Rodape
+*/
+
+#rodape {
+    clear: both;
+    font-size: .9em;
+    padding: 0 20px;
+    border-top: 1px dotted #26ADE4;
+    text-align: right;
+}
+
+#rodape img {
+    vertical-align: middle;
+}
+
+/*
+Imagem leandro
+*/
+
+#leandro-direita {
+    float: right;
+    margin: 10px 10px 0 0;
+    background: url(../images/leandro_coelho.jpg) -130px no-repeat;
+    width: 130px;
+    height: 133px;
+    display: block;
+    text-indent: -153000px;
+}
+
+#leandro-esquerda {
+    float: left;
+    margin: 10px 10px 0 0;
+    background: url(../images/leandro_coelho.jpg) no-repeat;
+    width: 130px;
+    height: 133px;
+    display: block;
+    text-indent: -153000px;
+}
+
+/*
+Botao outra frase
+*/
+
+#div-botao  {
+    clear: both;
+    padding: 0 20px;
+    text-align: center;
+    margin: 70px 0 50px 0;
+}
+
+#div-botao .button {
+    font-size: 1.8em;
+    font-weight: bold;
+    width: 180px;
+    background-color: #4DBCE9;
+    color: #fff;
+    text-shadow: none;
+    padding: 10px;
+    clear: left;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    text-align: center;    
+}
