@@ -66,7 +66,7 @@ public class FraseServlet extends HttpServlet {
 					response.sendRedirect("ok.jsp?mensagem=" + mensagem);
 				}
 			} else {
-				mensagem = "Erro - Frase n&#227;o inserida!";
+				mensagem = "Erro - Frase não inserida!";
 				log.info(mensagem);
 				response.sendRedirect("erro.jsp?mensagem=" + mensagem);
 			}
@@ -86,7 +86,7 @@ public class FraseServlet extends HttpServlet {
 				log.fine(mensagem);
 				response.sendRedirect("ok.jsp?mensagem=" + mensagem);
 			} else {
-				mensagem = "Erro - Frase n&#227;o alterada!";
+				mensagem = "Erro - Frase não alterada!";
 				log.info(mensagem);
 				response.sendRedirect("erro.jsp?mensagem=" + mensagem);
 			}
@@ -100,11 +100,11 @@ public class FraseServlet extends HttpServlet {
 			boolean retorno;
 			retorno = fd.apagrarFrase(frase);
 			if (retorno) {
-				mensagem = "OK - Frase exclu&#237;da com sucesso!";
+				mensagem = "OK - Frase excluída com sucesso!";
 				log.fine(mensagem);
 				response.sendRedirect("ok.jsp?mensagem=" + mensagem);
 			} else {
-				mensagem = "Erro - Frase n&#227;o exclu&#237;da!";
+				mensagem = "Erro - Frase não excluída!";
 				log.info(mensagem);
 				response.sendRedirect("erro.jsp?mensagem=" + mensagem);
 			}
