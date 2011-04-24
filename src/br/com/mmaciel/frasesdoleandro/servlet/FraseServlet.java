@@ -41,48 +41,98 @@ public class FraseServlet extends HttpServlet {
 	 */
 	protected void processRequest(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		       
+
 		FraseDAO fd = new FraseDAO();
-		String acao = request.getParameter("f");
-		if (acao == null){
+		String acao = request.getParameter("acao");
+		if (acao == null) {
 			acao = "nova";
 		}
-		
+
 		if (acao.equals("inserir")) {
-			Frase frase = new Frase();	
+			String mensagem = null;
+			String texto = request.getParameter("texto");
+			if (!texto.equals("")) {
+				Frase frase = new Frase();
+				frase.setTexto(request.getParameter("texto"));
+				log.fine(frase.toString());
+				System.out.println(frase);
+
+				log.info("Inserindo frase.");
+				boolean retorno;
+				retorno = fd.inserirFrase(frase);
+				if (retorno) {
+					mensagem = "OK - Frase inserida com sucesso!";
+					log.fine(mensagem);
+					response.sendRedirect("ok.jsp?mensagem=" + mensagem);
+				}
+			} else {
+				mensagem = "Erro - Frase n&#227;o inserida!";
+				log.info(mensagem);
+				response.sendRedirect("erro.jsp?mensagem=" + mensagem);
+			}
+		}
+		if (acao.equals("alterar")) {
+			Frase frase = new Frase();
 			frase.setTexto(request.getParameter("texto"));
+			frase.setId(Long.parseLong(request.getParameter("id")));
 			log.fine(frase.toString());
 			System.out.println(frase);
-			
-			log.info("Inserindo frase.");
+			String mensagem = null;
+			log.info("Alterando frase.");
 			boolean retorno;
-			retorno = fd.insereFrase(frase);		
-			if (retorno){
-				log.fine("OK - Frase inserida com sucesso.");
-				response.sendRedirect("ok.jsp");
+			retorno = fd.alterarFrase(frase);
+			if (retorno) {
+				mensagem = "OK - Frase alterada com sucesso!";
+				log.fine(mensagem);
+				response.sendRedirect("ok.jsp?mensagem=" + mensagem);
 			} else {
-				log.info("Erro - Frase não inserida.");
-				response.sendRedirect("erro.jsp");
+				mensagem = "Erro - Frase n&#227;o alterada!";
+				log.info(mensagem);
+				response.sendRedirect("erro.jsp?mensagem=" + mensagem);
 			}
-		} else if(acao.equals("nova"))  {
 
+		} else if (acao.equals("excluir")) {
+			Frase frase = new Frase();
+			frase.setId(Long.parseLong(request.getParameter("id")));
+			log.fine(frase.toString());
+			String mensagem = null;
+			log.info("Excluindo frase.");
+			boolean retorno;
+			retorno = fd.apagrarFrase(frase);
+			if (retorno) {
+				mensagem = "OK - Frase exclu&#237;da com sucesso!";
+				log.fine(mensagem);
+				response.sendRedirect("ok.jsp?mensagem=" + mensagem);
+			} else {
+				mensagem = "Erro - Frase n&#227;o exclu&#237;da!";
+				log.info(mensagem);
+				response.sendRedirect("erro.jsp?mensagem=" + mensagem);
+			}
+
+		} else if (acao.equals("nova")) {
 			System.out.println("Obtendo frase do controlador.");
-			String frase = FraseController.getInstance().selecionaFraseAleatoria();
+			String frase = FraseController.getInstance()
+					.selecionaFraseAleatoria();
 			log.info("Gravando frase na sessao.");
 			HttpSession sessao = request.getSession();
 			sessao.setAttribute("frase", frase);
-
 			response.sendRedirect("frase.jsp");
-		} else if(acao.equals("listar"))  {
 
+		} else if (acao.equals("listar")) {
 			List<Frase> frases = new ArrayList<Frase>();
-			System.out.println("Obtendo lista de frases.");			
-			frases = fd.listaFrases();
-
+			log.info("Obtendo lista de frases.");
+			frases = fd.listarFrases();
 			HttpSession sessao = request.getSession();
 			sessao.setAttribute("frases", frases);
-
 			response.sendRedirect("listar.jsp");
+
+		} else if (acao.equals("admin")) {
+			List<Frase> frases = new ArrayList<Frase>();
+			log.info("Administração de frases.");
+			frases = fd.listarFrases();
+			HttpSession sessao = request.getSession();
+			sessao.setAttribute("frases", frases);
+			response.sendRedirect("ADM.jsp");
 		}
 	}
 

@@ -11,14 +11,14 @@ import javax.servlet.http.HttpServletResponse;
  * 
  * @author Marco Antonio Maciel
  */
-public class ListarFrasesServlet extends HttpServlet {
+public class AdministrarFrasesServlet extends HttpServlet {
 
-	private static final long serialVersionUID = -6256054408606827152L;
+	private static final long serialVersionUID = -3883506323515916074L;
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.sendRedirect("frase?acao=listar");	
+		response.sendRedirect("frase?acao=admin");	
 		
 	}
 

@@ -1,21 +1,16 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" isELIgnored="false" %>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<head>
+	        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <link href="css/frases.css" rel="stylesheet" type="text/css" />
-        <link href="favicon.ico" rel="icon" type="image/x-icon" />
+        <link href="favicon.ico" rel="icon" type="image/x-icon">
         <title>Frases do Leandro</title>
     </head>
     <body>
 		<jsp:include page="topo.jsp" />	
-		<p>Erro ao inserir frase.</p>
-
-            <div id="div-botao">
-                <p>
-                    <a class="button" href="./frase?f=nova" title="Outra frase">Outra frase</a>
-                </p>    
-            </div>
+		<p>${param.mensagem}</p>
+		<a href="admin">Lista ADM</a>
 		<jsp:include page="rodape.jsp" />	
     </body>
 </html>  

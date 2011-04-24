@@ -11,11 +11,12 @@
 	  	<jsp:include page="topo.jsp" />	
 	    <div id="corpo">
 		<br/>
-		<form method="post" action="/frase">Nova frase:</br>
+		<form method="post" action="/frase">Alterar frase:</br>
 		
-			<input type="hidden" name="acao" id="acao" value="inserir"/>
-			<textarea name="texto" id="texto" cols=40 rows=6></textarea></br>
-			<input type="submit" value="Inserir" />
+			<input type="hidden" name="acao" id="acao" value="alterar"/>
+			<input type="hidden" name="id" id="id" value="${param.id}"/>
+			<textarea name="texto" id="texto" cols=40 rows=6>${param.frase}</textarea></br>
+			<input type="submit" value="Alterar" />
 		
 		</form>
 		</div>
