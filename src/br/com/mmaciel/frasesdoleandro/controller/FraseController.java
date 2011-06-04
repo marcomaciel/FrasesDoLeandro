@@ -21,7 +21,7 @@ import br.com.mmaciel.frasesdoleandro.util.ArquivoUtil;
 */
 public class FraseController {
 	
-	private final String ARQUIVO_DE_FRASES = "frases.txt";
+	//private final String ARQUIVO_DE_FRASES = "frases.txt";
 	private static FraseController fraseController = null;
 
 	private String texto = null;
