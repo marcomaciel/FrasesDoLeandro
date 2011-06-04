@@ -55,7 +55,7 @@ public class FraseServlet extends HttpServlet {
 				Frase frase = new Frase();
 				frase.setTexto(request.getParameter("texto"));
 				log.fine(frase.toString());
-				System.out.println(frase);
+				log.info(frase.toString());
 
 				log.info("Inserindo frase.");
 				boolean retorno;
@@ -110,7 +110,7 @@ public class FraseServlet extends HttpServlet {
 			}
 
 		} else if (acao.equals("nova")) {
-			System.out.println("Obtendo frase do controlador.");
+			log.info("Obtendo frase do controlador.");
 			String frase = FraseController.getInstance()
 					.selecionaFraseAleatoria();
 			log.info("Gravando frase na sessao.");

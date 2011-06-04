@@ -38,7 +38,7 @@ public class FrasesTest {
     
     @Test
     public void retornaListaDeFrases(){
-    	List<Frase> listaFrases = FraseController.getInstance().retornaListaDeFrases("frases.txt");
+    	List<Frase> listaFrases = FraseController.getInstance().retornaListaDeFrasesDoArquivo("frases.txt");
     	Assert.assertNotNull(listaFrases);
     }    
     

@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.logging.Logger;
 
+import br.com.mmaciel.frasesdoleandro.dao.FraseDAO;
 import br.com.mmaciel.frasesdoleandro.model.Frase;
 import br.com.mmaciel.frasesdoleandro.util.ArquivoUtil;
 
@@ -20,7 +21,7 @@ import br.com.mmaciel.frasesdoleandro.util.ArquivoUtil;
 */
 public class FraseController {
 	
-	private final String ARQUIVO_FRASES = "frases.txt";
+	private final String ARQUIVO_DE_FRASES = "frases.txt";
 	private static FraseController fraseController = null;
 
 	private String texto = null;
@@ -28,7 +29,7 @@ public class FraseController {
 	private static final Logger log = Logger.getLogger(FraseController.class.getName());
 
 	public FraseController() {
-		frases = this.retornaListaDeFrases(ARQUIVO_FRASES);
+		frases = this.retornaListaDeFrasesDoBancoDeDados();
 		
 	}
 
@@ -41,7 +42,7 @@ public class FraseController {
 		return frases.get(numDaEscolha).getTexto();
 	}
 
-	public List<Frase> retornaListaDeFrases(String arquivo) {
+	public List<Frase> retornaListaDeFrasesDoArquivo(String arquivo) {
 				
 		ArquivoUtil arquivoUtil = new ArquivoUtil();
 		
@@ -64,6 +65,16 @@ public class FraseController {
 
 		log.info(frases.size() + " frases encontradas.");
 
+		return frases;
+	}
+	
+	public List<Frase> retornaListaDeFrasesDoBancoDeDados() {
+		
+		FraseDAO fraseDao = new FraseDAO();
+		
+		log.info("Obtendo frases no Banco de Dados.");
+		frases = fraseDao.listarFrases();
+		log.info(frases.size() + " frases encontradas.");
 		return frases;
 	}
 	
