@@ -1,4 +1,4 @@
-package br.com.mmaciel.frasesdoleandro.dao;
+package frasesdoleandro.dao;
 
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManagerFactory;

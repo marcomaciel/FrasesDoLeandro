@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.mmaciel.frasesdoleandro;
+package frasesdoleandro;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,9 +12,11 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import br.com.mmaciel.frasesdoleandro.controller.FraseController;
 import br.com.mmaciel.frasesdoleandro.model.Frase;
-import br.com.mmaciel.frasesdoleandro.util.ArquivoUtil;
+
+import frasesdoleandro.controller.FraseController;
+import frasesdoleandro.util.ArquivoUtil;
+
 
 /**
  *
@@ -44,7 +46,7 @@ public class FrasesTest {
     
     @Test
     public void buscaFraseAleatoriaComSucesso() throws IOException {
-        String frase = FraseController.getInstance().selecionaFraseAleatoria();
+        Frase frase = FraseController.getInstance().selecionaFraseAleatoria();
         Assert.assertNotNull(frase);
     }     
       

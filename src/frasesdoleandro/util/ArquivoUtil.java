@@ -1,4 +1,4 @@
-package br.com.mmaciel.frasesdoleandro.util;
+package frasesdoleandro.util;
 
 import java.io.File;
 import java.net.URL;

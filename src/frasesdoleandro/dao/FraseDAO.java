@@ -1,4 +1,4 @@
-package br.com.mmaciel.frasesdoleandro.dao;
+package frasesdoleandro.dao;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -7,9 +7,9 @@ import java.util.logging.Logger;
 
 import javax.jdo.PersistenceManager;
 
-import br.com.mmaciel.frasesdoleandro.model.Frase;
-
 import javax.jdo.Query;
+
+import br.com.mmaciel.frasesdoleandro.model.Frase;
 
 /**
  * 
@@ -39,6 +39,20 @@ public class FraseDAO {
 		}
 
 		return retorno;
+	}
+
+	public Frase obterFrasePorId(int id) {
+		pm = PMF.get().getPersistenceManager();
+		Frase frase = null;
+		try {
+			Frase f = pm.getObjectById(Frase.class, id);
+			return f;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return frase;
+		} finally {
+			pm.close();
+		}
 	}
 
 	public boolean alterarFrase(Frase frase) {

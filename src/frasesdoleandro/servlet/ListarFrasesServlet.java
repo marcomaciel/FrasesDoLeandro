@@ -1,4 +1,4 @@
-package br.com.mmaciel.frasesdoleandro.servlet;
+package frasesdoleandro.servlet;
 
 import java.io.IOException;
 
