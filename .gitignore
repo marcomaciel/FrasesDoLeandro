@@ -3,9 +3,13 @@ war/WEB-INF/classes/**/*
 war/WEB-INF/classes
 appengine-generated
 .settings
+.classpath
 
-# Compiled source #
-###################
+build
+build/*
+out
+dist
+
 *.com
 *.class
 *.dll
@@ -33,6 +37,7 @@ appengine-generated
 # OS generated files #
 ######################
 .DS_Store?
+.DS_Store
 ehthumbs.db
 Icon?
 Thumbs.db

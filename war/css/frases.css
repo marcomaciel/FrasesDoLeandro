@@ -8,6 +8,12 @@ body {
     font: .625em helvetica, arial, sans-serif;
 }
 
+#botao-twitter {
+    clear: both;
+    padding: 20px 0 0 0;
+    text-align: right;
+}
+
 #tudo {
     margin: 0 auto;
     padding: 20px 0 0 0;
@@ -141,7 +147,7 @@ Botao outra frase
     clear: both;
     padding: 0 20px;
     text-align: center;
-    margin: 70px 0 50px 0;
+    margin: 50px 0 50px 0;
 }
 
 #div-botao .button {
