@@ -36,6 +36,11 @@ public class Frase implements Serializable  {
 	public Frase() {
 	}
 	
+	public Frase(String texto) {
+		super();
+		this.texto = texto;
+	}
+	
 	public Frase(String texto, Date data, String autor) {
 		super();
 		this.texto = texto;
@@ -43,10 +48,6 @@ public class Frase implements Serializable  {
 		this.autor = autor;
 	}
 	
-	public Frase(String texto) {
-		this.texto = texto;
-	}
-
 	public String getTexto() {
 		return texto;
 	}

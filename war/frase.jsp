@@ -17,7 +17,7 @@
 
             <div id="div-botao">
                 <p>
-                    <a class="button" href="./frase?f=nova" title="Outra frase">Outra frase</a>
+                    <a class="button" href="./frase" title="Outra frase">Outra frase</a>
                 </p>    
             </div>
 		<jsp:include page="rodape.jsp" />	
